@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #77C9D4;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="pl.pwn.reaktor.ankieta.controller.AnkietaController">
+   <children>
+      <GridPane prefHeight="500.0" prefWidth="601.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="244.0" minHeight="6.0" prefHeight="31.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="494.0" minHeight="0.0" prefHeight="53.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="494.0" minHeight="10.0" prefHeight="419.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <MenuBar style="-fx-background-color: #F7C331;">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="m_send" mnemonicParsing="false" onAction="#send" text="Send" />
+                        <MenuItem fx:id="m_save_to_file" mnemonicParsing="false" onAction="#saveToFile" text="Save to file" />
+                        <MenuItem fx:id="m_save_to_database" mnemonicParsing="false" onAction="#saveToDatabase" text="Save to database" />
+                        <MenuItem fx:id="m_clear" mnemonicParsing="false" onAction="#clear" text="Clear" />
+                        <MenuItem fx:id="m_close" mnemonicParsing="false" onAction="#close" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="m_about" mnemonicParsing="false" onAction="#about" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Contact" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Competences" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Course " HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <GridPane GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="tf_name" layoutX="17.0" layoutY="14.0" promptText="Name" />
+                        <TextField fx:id="tf_last_name" layoutX="17.0" layoutY="55.0" promptText="Last name" />
+                        <TextField fx:id="tf_mail" layoutX="17.0" layoutY="95.0" promptText="Mail" />
+                        <TextField fx:id="tf_phone" layoutX="17.0" layoutY="137.0" promptText="Phone" />
+                        <ImageView fitHeight="176.0" fitWidth="174.0" layoutX="14.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logo_pionowe_reaktor.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label layoutX="21.0" layoutY="14.0" text="Programming languages:" />
+                        <CheckBox fx:id="cb_java" layoutX="21.0" layoutY="31.0" mnemonicParsing="false" text="Java" />
+                        <CheckBox fx:id="cb_python" layoutX="21.0" layoutY="57.0" mnemonicParsing="false" text="Python" />
+                        <CheckBox fx:id="cb_other" layoutX="21.0" layoutY="85.0" mnemonicParsing="false" onMouseClicked="#unlockOther" text="Other" />
+                        <TextField fx:id="tf_other" disable="true" layoutX="17.0" layoutY="114.0" promptText="Enter the language" />
+                        <Label layoutX="21.0" layoutY="169.0" text="Languages:" />
+                        <RadioButton fx:id="rb_basic" layoutX="17.0" layoutY="191.0" mnemonicParsing="false" text="Basic">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="g1" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rb_intermediate" layoutX="17.0" layoutY="217.0" mnemonicParsing="false" selected="true" text="Intermediate" toggleGroup="$g1" />
+                        <RadioButton fx:id="rb_advanced" layoutX="17.0" layoutY="243.0" mnemonicParsing="false" text="Advanced" toggleGroup="$g1" />
+                        <Button fx:id="btn_preview" layoutX="62.0" layoutY="338.0" mnemonicParsing="false" onMouseClicked="#preview" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #F7C331;" text="Preview" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Course selection" />
+                        <ComboBox fx:id="cmb_courses" layoutX="14.0" layoutY="31.0" prefWidth="150.0" />
+                        <Label layoutX="16.0" layoutY="89.0" text="Preview:" />
+                        <TextArea fx:id="ta_preview" editable="false" layoutX="14.0" layoutY="117.0" prefHeight="255.0" prefWidth="167.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

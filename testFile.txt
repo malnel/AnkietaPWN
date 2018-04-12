@@ -1,0 +1,8 @@
+Kontakt: 
+freq gewg
+E-mail: gew
+Telefon: etwg
+Języki programowania:
+- Python
+Poziom: Intermediate
+Kurs: Front-end
